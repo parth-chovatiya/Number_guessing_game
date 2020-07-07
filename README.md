@@ -1,2 +1,3 @@
 # Number_guessing_game
-Number 
+Number Guessing Game is for Desktop User
+
