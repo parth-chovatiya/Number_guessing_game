@@ -40,10 +40,13 @@ def get_detail():
         global random_number
         random_number = randint(f_number, s_number)
         print(random_number)
-        if random_number == int(entry_user.get()):
-            answer.insert(INSERT, "Congratulation, You Win")
+        if int(entry_user.get())>=f_number and int(entry_user.get())<=s_number:
+            if random_number == int(entry_user.get()):
+                answer.insert(INSERT, "Congratulation, You Win")
+            else:
+                answer.insert(INSERT, "Better Luck, Next Time")
         else:
-            answer.insert(INSERT, "Better Luck, Next Time")
+            answer.insert(INSERT, "Enter valid number")
     else:
         answer.insert(INSERT, "Please, \nEnter large number compare to " + str(f_number))
 
@@ -54,6 +57,7 @@ def yes_prompt():
     if ans_yes_no:
         answer_label = Label(bottom_frame, text="Answer = " + str(random_number))
         answer_label.pack()
+    
 
 
 my_font = Font(family="bazooka", size=14, weight="bold")
